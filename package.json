@@ -13,7 +13,9 @@
     "clean": "rimraf docs",
     "ixfx": "rimraf ixfx && copyfiles --up 3 node_modules/ixfx/dist/**.* docs/ixfx",
     "watch:tsc": "tsc --watch",
-    "watch:static": "cpx \"src/**/*.{html,css,js}\" docs --watch"
+    "watch:static": "cpx \"src/**/*.{html,css,js}\" docs --watch",
+    "serve:ws": "node ws-server.js",
+    "serve:http": "five-server"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.4.0",
@@ -21,8 +23,12 @@
     "copyfiles": "^2.4.1",
     "cpx2": "^5.0.0",
     "eslint-plugin-unicorn": "^48.0.1",
+    "five-server": "^0.3.1",
     "ixfx": "latest",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
+  },
+  "stackblitz": {
+    "startCommand": "concurrently npm:serve:*"
   }
 }
