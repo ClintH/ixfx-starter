@@ -1,0 +1,28 @@
+{
+  "name": "ixfx-starter",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "npm run ixfx && concurrently npm:watch:*",
+    "build": "npm run clean && npm run ixfx && tsc && npm run static",
+    "static": "cpx \"src/**/*.{html,css,js}\" docs",
+    "clean": "rimraf docs",
+    "ixfx": "rimraf ixfx && copyfiles --up 3 node_modules/ixfx/dist/**.* docs/ixfx",
+    "watch:tsc": "tsc --watch",
+    "watch:static": "cpx \"src/**/*.{html,css,js}\" docs --watch"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.4.0",
+    "concurrently": "^8.2.0",
+    "copyfiles": "^2.4.1",
+    "cpx2": "^5.0.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "ixfx": "^0.10.1",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "port": "5500",
+  "open": false,
+  "cors": true,
+  "root": "./docs",
+  "navigator": false,
+  "https": false,
+  "withExtension": "never",
+  "useLocalIp": false,
+  "ignore": [
+    "node_modules",
+    "ixfx"
+  ]
+}
