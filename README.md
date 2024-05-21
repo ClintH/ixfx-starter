@@ -4,7 +4,7 @@ This is an [ixfx](https://clinth.github.io/ixfx-docs/) starter project for using
 
 Make sketches under the `src` folder. Typescript files are compiled when using one of the npm scripts listed below. DO NOT edit files in the `docs` directory: these are produced from `src`.
 
-When built, ixfx is copied to `docs\ixfx`. It can be referenced in a sketch with something like:
+ixfx can be referenced in a sketch with something like:
 
 ```js
 // eg. src/data/point-tracker/script.ts
@@ -21,15 +21,25 @@ Install pre-requisites the first time you download the repository:
 npm install
 ```
 
-After that, use `start`. This will watch TS, HTML, CSS and JS files for changes, automatically building them to the `docs` folder.
+After that, use `npm run start`. This will watch TS, HTML, CSS and JS files for changes, automatically building them to the `docs` folder.
 
 ```
-npm start
+npm run start
 ```
 
 It will also copy ixfx from `node_modules` so it's consumable on the front-end.
 
-Use something like [Five Server](https://marketplace.visualstudio.com/items?itemName=yandeu.five-server) to run code in the browser.
+By default it starts Five Server to make your code accessible in the browser and automatically reload when there are changes.
+
+## Websockets
+
+You can use the provided simple websocket server. Instead of starting with `npm run start`, use:
+
+```
+npm run start-ws
+```
+
+Instead of using Five Server like `npm run start`, it will use a Node.js webserver. You will have to manually refresh the browser when you make changes to the code.
 
 ## Building
 
@@ -38,6 +48,7 @@ Build to `docs` folder. This compiles TS to JS and copies HTML, CSS and JS from 
 ```
 npm run build
 ```
+
 
 Clean: deletes `docs` folder
 
