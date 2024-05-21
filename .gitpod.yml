@@ -1,0 +1,17 @@
+tasks:
+  - init: |
+      npm install
+      npm run build
+    command: npm run start
+
+  - name: Serve regular
+    command: npm run start
+
+  - name: Serve Websockets
+    command: npm run start-ws
+    
+ports:
+  - name: ixfx
+    port: 5500
+    onOpen: open-browser
+    visibility: public
