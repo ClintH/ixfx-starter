@@ -4,12 +4,6 @@ tasks:
       npm run build
     command: npm run start
 
-  - name: Serve regular
-    command: npm run start
-
-  - name: Serve Websockets
-    command: npm run start-ws
-    
 ports:
   - name: ixfx
     port: 5500
