@@ -43,7 +43,7 @@ Instead of using Five Server like `npm run start`, it will use a Node.js webserv
 
 ## Building
 
-Build to `docs` folder. This compiles TS to JS and copies HTML, CSS and JS from `src` to `docs`:
+Build to `docs` folder. This compiles TS to JS and copies HTML, CSS and JS from `src` to `docs`, as well as including a copy of ixfx.
 
 ```
 npm run build
