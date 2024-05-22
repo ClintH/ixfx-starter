@@ -38,7 +38,21 @@ console.log(join(__dirname, `docs`));
 f.register(fastifyStatic, {
   root: join(__dirname, `docs/`),
   prefix: `/`, // optional: default '/'
-});
+  list: {
+    format: `html`,
+    render: (dirs, files) => {
+      return `
+<html><body>
+<ul>
+  ${dirs.map(dir => `<li><a href="${dir.href}">${dir.name}</a></li>`).join('\n  ')}
+</ul>
+<ul>
+  ${files.map(file => `<li><a href="${file.href}" target="_blank">${file.name}</a></li>`).join('\n  ')}
+</ul>
+</body></html>
+`
+    }
+  });
 
 f.listen(
   { port: process.env.PORT ?? 5500, host: `0.0.0.0` },

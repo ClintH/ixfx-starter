@@ -7,8 +7,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "npm run ixfx && concurrently \"npm:watch:*\" \"npm run serve:http\"",
-    "start-ws": "npm run ixfx && concurrently \"npm:watch:*\" \"npm run serve:ws\"",
+    "start": "npm run ixfx && npm run build && concurrently \"npm:watch:*\" \"npm run serve:http\"",
+    "start-ws": "npm run ixfx && npm run build && concurrently \"npm:watch:*\" \"npm run serve:ws\"",
     "build": "npm run clean && npm run ixfx && tsc && npm run static",
     "static": "cpx \"src/**/*.{html,css,js}\" docs",
     "clean": "rimraf docs",
