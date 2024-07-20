@@ -17,6 +17,7 @@
       "backtick"
     ],
     "unicorn/consistent-destructuring": "off",
+    "unicorn/prevent-abbreviations":"off",
     "unicorn/no-thenable": "off",
     "unicorn/consistent-function-scoping": "off",
     "unicorn/require-post-message-target-origin": "off",
